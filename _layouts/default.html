@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="/css/timeline.css">
 
     <script href="/js/bootstrap.bundle.min.js"></script>
     <script href="/js/bootstrap.min.js"></script>
@@ -34,57 +35,57 @@
 
 <body>
 
-<header class="site-header" role="banner">
+<div class="container">
 
-        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-            <a class="navbar-brand" href="/">Andrea Dicka</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
+    <header class="site-header" role="banner">
+            <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+                <a class="navbar-brand" href="/">Andrea Dicka</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
 
-                    {% assign current = page.url | downcase | split: '/' %}
+                        {% assign current = page.url | downcase | split: '/' %}
 
-                    <li class="nav-item {% if page.active == 'home' %} active {% endif %}">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if page.active == 'about' %} active {% endif %}" href="/about/">About me</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if page.active == 'iaeste' %} active {% endif %}" href="/iaeste/">IAESTE</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if page.active == 'work' %} active {% endif %}" href="/work/">Work</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if page.active == 'contact' %} active {% endif %}" href="/contact/">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+                        <li class="nav-item {% if page.active == 'home' %} active {% endif %}">
+                            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if page.active == 'about' %} active {% endif %}" href="/about/">About me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if page.active == 'iaeste' %} active {% endif %}" href="/iaeste/">IAESTE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if page.active == 'work' %} active {% endif %}" href="/work/">Work</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if page.active == 'contact' %} active {% endif %}" href="/contact/">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+    </header>
 
-</header>
+    <main class="page-content" aria-label="Content">
+
+        {{content}}
 
 
-<main class="page-content" aria-label="Content">
-    <div class="wrapper">
-        <div class="home">
-            {{content}}
-        </div>
-    </div>
-</main>
+    </main>
 
-<footer class="site-footer h-card">
+    <footer class="site-footer h-card">
 
-    <div class="wrapper">
+
 
         Footer
 
-    </div>
 
-</footer>
+
+    </footer>
+</div>
+
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
