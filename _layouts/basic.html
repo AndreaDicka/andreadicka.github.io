@@ -1,20 +1,16 @@
-{% include header.html %}
+---
+layout: default
+---
+
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">{{ page.nadpis }}</h1>
+        <p class="lead text-muted">{{ page.text }}</p>
+    </div>
+</section>
+
+{{content}}
 
 
-{% include navigation.html %}
 
 
-<main class="page-content" aria-label="Content">
-
-        <section class="jumbotron text-center">
-            <div class="container">
-                <h1 class="jumbotron-heading">{{ page.nadpis }}</h1>
-                <p class="lead text-muted">{{ page.text }}</p>
-            </div>
-        </section>
-
-        {{content}}
-
-</main>
-
-{% include footer.html %}

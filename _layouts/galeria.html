@@ -1,0 +1,24 @@
+---
+layout: basic
+---
+
+<div class="container gallery-container">
+
+    <div class="tz-gallery">
+
+        <div class="row">
+
+            {% for image in page.images %}
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="{{image.link}}" target="_blank">
+                    <img src="{{image.link}}" alt="gallery">
+                </a>
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</div>
