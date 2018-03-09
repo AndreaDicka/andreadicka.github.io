@@ -1,4 +1,4 @@
-<footer class="site-footer h-card">
+<footer class="site-footer h-card" style="background-color: #4b4b4b; color: #fff;">
 
     <!--Footer Links-->
     <div class="container-fluid text-center text-md-left">
@@ -7,7 +7,7 @@
             <!--First column-->
             <div class="col-md-8">
                 <h5 class="text-uppercase">Andrea Dická</h5>
-                <p></p>
+                <p>Dnes je: {{ site.time | date_to_string }}</p>
             </div>
             <!--/.First column-->
 
@@ -16,13 +16,13 @@
                 <h5 class="text-uppercase">Linky</h5>
                 <ul class="list-unstyled">
                     <li>
-                        <a href="/about/">About me</a>
+                        <a href="/about/" style="color: #9fcdff;">O mne</a>
                     </li>
                     <li>
-                        <a href="/work/">Work</a>
+                        <a href="/work/" style="color: #9fcdff;">Praca</a>
                     </li>
                     <li>
-                        <a href="/galeria/">Contact</a>
+                        <a href="/galeria/" style="color: #9fcdff;">Galeria</a>
                     </li>
                 </ul>
             </div>

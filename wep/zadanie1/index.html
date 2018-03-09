@@ -3,7 +3,187 @@ layout: default
 title: Zad1
 active: zad1
 ---
-<div class="blurb">
-    <h1>Dokumentácia k zadaniu 1</h1>
-    <p>Dokumentácia</p>
-</div><!-- /.blurb -->
+<div style="margin-bottom: 80px;">
+    <h2>Dokumentácia k zadaniu 1</h2>
+    <p><strong>Znenie zadania: </strong> <a href="https://wiki.fiit.stuba.sk/study/bc/info/wp/2017-18/zadanie1/"
+                                            target="_blank">Zadanie 1</a></p>
+</div>
+
+<div>
+    <h3>1. Rozloženie stránok</h3>
+    <br>
+    <dl class="row">
+        <dt class="col-sm-3">Layouty</dt>
+        <dd class="col-sm-9">Na webe mám použité 3 layouty. Všetky sa nachádzajú v zložke <kbd> _layouts </kbd>.
+            Základný layout <strong>default.html</strong> mám použitý na homepage. V ňom sú poincludované 3 súbory, a to
+            <br><code>header.html, navigation.html a footer.html</code>
+            <br>Ďalší layout sa volá <strong>basic.html</strong>, ktorý mám použitý na stránkach O mne, Work a je
+            súčasťou posledného layoutu <strong>galeria.html</strong>. Basic layout rozširuje základný o nadpisovú časť
+            stránok.
+            Layout galeria je určený pre stránku Galéria, v ktorom sa zobrazujú obrázky použité na webe.
+        </dd>
+
+        <dt class="col-sm-3">Domov</dt>
+        <dd class="col-sm-9">
+            <p>Na stránke domov je použitý layout <strong>default.html</strong>. Tento layout nám poskytuje iba základnú
+                funkcionalitu, a teda nám zobrazí menu a footer. Zvyšok stránky je vytvorený v obsahovej časti.</p>
+        </dd>
+
+        <dt class="col-sm-3">O mne</dt>
+        <dd class="col-sm-9">Na tejto stránke je použitý layout <strong>basic.html</strong>, ktorý zobrazí sivú časť
+            nadpisu okrem základnej verzie default layoutu. Časť hobby a timeline je súčasťou obsahovej stránky.
+        </dd>
+
+        <dt class="col-sm-3 text-truncate">Práca</dt>
+        <dd class="col-sm-9">Na tejto stránke je použitý layout <strong>basic.html</strong>, ktorý zobrazí sivú časť
+            nadpisu okrem základnej verzie default layoutu. Kartičky zobrazujúce portfólio a druhá časť "Wisdom Factory"
+            je súčasťou obsahovej časti stránky.
+        </dd>
+
+        <dt class="col-sm-3">WP</dt>
+        <dd class="col-sm-9">
+            V časti WP sa nachádzajú dokumentácie k jednotlivým zadaniam a stránky používajú layout
+            <strong>default.html</strong>
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <h3>2. Premenné</h3>
+    <br>
+    <dl class="row">
+        <dt class="col-sm-3">header.html</dt>
+        <dd class="col-sm-9">V tejto časti sa nachádza premenná <code>page.title</code>
+        </dd>
+
+        <dt class="col-sm-3">navigation.html</dt>
+        <dd class="col-sm-9">V tejto časti sa nachádza premenná <code>page.active</code>. Používam ju pri zvýraznení
+            stránky v menu, podľa toho, na ktorej sa práve nachádzam.
+        </dd>
+        <dt class="col-sm-3">footer.html</dt>
+        <dd class="col-sm-9">Vo footri používam premennú <code>site.time</code>, pre vypísanie aktuálneho dátumu.
+        </dd>
+        <dt class="col-sm-3">Homepage a Aktuality</dt>
+        <dd class="col-sm-9">Na homepage mám zoznam článkov aktualít, kde si zapisujem zmeny na webe. Aby som články
+            vypísala, používam tam premenné <code>post.title, post.url a post.date</code>
+        </dd>
+        <dt class="col-sm-3">Galéria</dt>
+        <dd class="col-sm-9">
+            Za spomenutie stojí ešte premenná <code>images</code>, ktorá predstavuje pole obrázkov, ktoré sa vykreslia v
+            galérii.
+            Takto vyzerá na ukážku súbor index.html pre galériu.
+            {% highlight ruby %}
+            ---
+            layout: galeria
+            title: Galéria
+            active: gallery
+            nadpis: Galeria
+            text: Galeria
+            images:
+            - link: ../images/aupark.png
+            - link: ../images/cobotect.png
+            - link: ../images/event_FIIT.jpg
+            - link: ../images/FB_nabor.png
+            - link: ../images/hilek.png
+            - link: ../images/img1.jpg
+            - link: ../images/img2.jpg
+            - link: ../images/img3.jpg
+            - link: ../images/kj_ukayka.jpg
+            - link: ../images/nalepky.png
+            - link: ../images/reinguss.png
+            - link: ../images/rollups.jpg
+            ---
+            {% endhighlight %}
+        </dd>
+
+    </dl>
+
+</div>
+
+<div>
+    <h3>3. Dátové súbory</h3>
+    <br>
+    <dl class="row">
+        <dt class="col-sm-3">Súbory</dt>
+        <dd class="col-sm-9">Všetky dátové súbory sa nachádzajú v zložke <kbd>_data</kbd>
+        </dd>
+        <dt class="col-sm-3">O mne</dt>
+        <dd class="col-sm-9">Na tejto stránke používam načítanie obsahu do timeline zo súboru <code>education-timeline.json</code>
+        </dd>
+        <dt class="col-sm-3">Práca</dt>
+        <dd class="col-sm-9">Na tejto stránke používam načítanie obsahu pre IAESTE projekty zo súboru <code>protfolio.json</code>
+            a pre projekty Wisdom Factory používam súbor <code>wisdom.json</code>
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <h3>4. Filtre a tagy</h3>
+    <br>
+    <dl class="row">
+        <dt class="col-sm-3">Layout default.html</dt>
+        <dd class="col-sm-9">Aby som do layoutu vložila <strong>header.html, navigation.html a footer.html</strong>,
+            používam pritom tag <code>&lbrace;% include %&rbrace;</code>
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-3">header.html</dt>
+        <dd class="col-sm-9">Keď vypisujem <strong>title</strong>, používam filter <code>&lbrace;&lbrace; page.title |
+            prepend: "AD | " &rbrace;&rbrace; </code>, ktorý mi pred názov stránky vloží <strong>AD |</strong>
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-3">Footer</dt>
+        <dd class="col-sm-9">Pre vypísanie dátumu v tvare dd.mm.yyyy používam filter <code>&lbrace;&lbrace; site.time |
+            date_to_string &rbrace;&rbrace;</code>
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-3">Layout basic</dt>
+        <dd class="col-sm-9">V tomto layoute vypisujem názov stránky veľkými písmenami a použila som na to filter
+            <code>&lbrace;&lbrace; page.nadpis | upcase &rbrace;&rbrace;</code>
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-3">Dokumentácia</dt>
+        <dd class="col-sm-9">Pre ukážku kódu som použila tag
+            <code>&lbrace;% highlight %&rbrace;</code>
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <h3>5. Pluginy</h3>
+    <br>
+    <dl class="row">
+        <dt class="col-sm-3">Jemoji</dt>
+        <dd class="col-sm-9">Tento plugin používam na homepage pre vykreslenie smajlíka :smile:
+        </dd>
+    </dl>
+
+</div>
+
+<div>
+    <h3>6. Štýly</h3>
+    <p>Štýly sa nachádzajú v zložke <kbd>css</kbd>. Všetky použité štýly sú poincludované v <strong>header.html</strong> v časti <code>head</code></p>
+    <br>
+    <dl class="row">
+        <dt class="col-sm-3">Bootstrap</dt>
+        <dd class="col-sm-9">Celkový dizajn stránky využíva prvky Bootstrap 4.0., ktorý sa nachádza na tomto
+            <a href="https://getbootstrap.com/" target="_blank">linku</a>
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-3">Timeline</dt>
+        <dd class="col-sm-9">Timeline použitý na stránke o mne sa nachádza na tomto
+            <a href="http://www.nicesnippets.com/snippet/sample-bootstrap-code-of-timeline-design-using-html-and-css" target="_blank">linku</a>
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-3">Galéria</dt>
+        <dd class="col-sm-9">CSS ku galérii som použila z tejto
+            <a href="https://demo.tutorialzine.com/2017/02/freebie-4-bootstrap-gallery-templates/#grid" target="_blank">stránky</a>
+        </dd>
+    </dl>
+
+</div>
