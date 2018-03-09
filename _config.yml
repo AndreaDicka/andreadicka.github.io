@@ -25,13 +25,6 @@ markdown: kramdown
 theme: minima
 timezone: TIMEZONE
 
-#plugins:
-#  - jemoji
-#  - jekyll-assets
-
-layouts:
-  - default
-  - basic
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
