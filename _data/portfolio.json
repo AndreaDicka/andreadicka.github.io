@@ -1,0 +1,34 @@
+{
+  "portfolio":[
+    {"image":"../images/event_FIIT.jpg",
+      "popis":"Vytvorila som grafiku pre event Dni Príležitostí, ktorý sa bude konať aj na FIIT STU 27.03.2018",
+      "show-link": "yes",
+      "link":"https://www.facebook.com/events/344967029320504/",
+      "link-popis":"Link na event"
+    },
+    {"image":"../images/kj_ukayka.jpg",
+      "popis":"Vytvorila som katalóg pre IAESTE Slovakia, v ktorom každoročne uverejňujú rôzne spoločnosti ponuku pracovných pozícií pre študentov.",
+      "show-link": "yes",
+      "link":"https://dniprilezitosti.sk/katalog-job/online2018",
+      "link-popis":"Link na online katalóg"
+    },
+    {"image":"../images/FB_nabor.png",
+      "popis":"Pripravila som grafickú tematiku pre náborové akcie IAESTE Slovakia.",
+      "show-link": "yes",
+      "link":"https://www.facebook.com/events/405467719914740/",
+      "link-popis":"Link na nábor"
+    },
+    {"image":"../images/rollups.jpg",
+      "popis":"Pripravila som nové roll-upy pre IAESTE Slovakia.",
+      "show-link": "no",
+      "link":"#",
+      "link-popis":"#"
+    },
+    {"image":"../images/nalepky.png",
+      "popis":"V rámci príprav na Dni Príležitostí som vyrobila nálepky pre študentov, ohľadom toho, čo študujú.",
+      "show-link": "no",
+      "link":"#",
+      "link-popis":"#"
+    }
+   ]
+}

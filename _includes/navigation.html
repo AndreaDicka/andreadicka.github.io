@@ -1,0 +1,38 @@
+<header class="site-header" role="banner">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Andrea Dicka</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+
+                {% assign current = page.url | downcase | split: '/' %}
+
+                <li class="nav-item {% if page.active == 'home' %} active {% endif %}">
+                    <a class="nav-link" href="/">Domov <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if page.active == 'about' %} active {% endif %}" href="/about/">O mne</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if page.active == 'work' %} active {% endif %}" href="/work/">Práca</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <!--<a class="nav-link {% if page.active == 'wep' %} active {% endif %}" href="/wep/">WP</a>-->
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        WP
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item nav-link" href="/wep/zadanie1/">Zadanie 1</a>
+                        <a class="dropdown-item nav-link" href="/wep/zadanie2/">Zadanie 2</a>
+                        <a class="dropdown-item nav-link" href="/wep/zadanie3/">Zadanie 3</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if page.active == 'contact' %} active {% endif %}" href="/galeria/">Galéria</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

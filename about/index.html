@@ -1,8 +1,55 @@
 ---
-layout: default
+layout: basic
 title: About page
 active: about
+nadpis: O mne
+text: Som študentkou na FIIT STU. Momentálne študujem vo 4.  ročníku na bakalárskom štúdiu. Popri škole sa venujem študentskej organizácii IAESTE Slovakia a takisto brigádujem vo firme Wisdom Factory.
 ---
+
+<div class="row">
+    <h2 style="margin: 20px auto;">Moje hobby</h2>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-body" style="background-color: #b3f7ff;">
+                    <h5 class="card-title">Grafické programy</h5>
+                    <p class="card-text">Vo voľnom čase si rada pozerám rôzne tutoriály a učím sa pracovať s programami ako
+                    Adobe Photoshop, Illustrator, či Indesign.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-body" style="background-color: #fdffc9;">
+                    <h5 class="card-title">Seriály</h5>
+                    <p class="card-text">Ak si nájdem čas, rada si pozriem vo večerných hodinách nejaký seriál ako Big Bang theory.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-body" style="background-color: #ffc9c2">
+                    <h5 class="card-title">Turistika</h5>
+                    <p class="card-text">Pochádzam z malej dediny pod Tatrami. K tomu patrí v lete samozrejme turistika
+                        vo Vysokých Tatrách, či v blízkom Slovenskom raji.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-body" style="background-color: #b4ffce;">
+                    <h5 class="card-title">Lyžovanie</h5>
+                    <p class="card-text">V zimnom období si rada chodím na kopce zalyžovať.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <h2 style="margin: 20px auto;">Časový prehľad</h2>
+</div>
+
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
         <section class="main-timeline-section">
@@ -10,57 +57,34 @@ active: about
             <div class="conference-center-line"></div>
             <div class="conference-timeline-content">
 
-                <div class="timeline-article content-right-container">
-                    <div class="content-date">
-                        <span>20-09-2017</span>
-                    </div>
-                    <div class="meta-date"></div>
-                    <div class="content-box">
-                        <p>Lorem ipsumm ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            e magna aliqua. Ut enim ad minim veniam, dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            sit amet.
-                        </p>
-                    </div>
-                </div>
 
-                <div class="timeline-article content-left-container">
-                    <div class="content-date">
-                        <span>20-09-2017</span>
-                    </div>
-                    <div class="meta-date"></div>
-                    <div class="content-box">
-                        <p>Lorem ipsumm ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            e magna aliqua. Ut enim ad minim veniam, dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            sit amet.
-                        </p>
-                    </div>
-                </div>
+                {% for article in site.data.education-timeline.timeline limit 1 offset 2 %}
+                    {% assign loopindex = forloop.index | modulo: 2 %}
+                        {% if loopindex == 1 %}
+                            <div class="timeline-article content-right-container">
+                                <div class="content-date">
+                                    <span>{{ article.date }}</span>
+                                </div>
+                                <div class="meta-date"></div>
+                                <div class="content-box">
+                                    <h5>{{ article.nadpis }}</h5>
+                                    <p>{{ article.text }}</p>
+                                </div>
+                            </div>
 
-                <div class="timeline-article content-right-container">
-                    <div class="content-date">
-                        <span>20-09-2017</span>
-                    </div>
-                    <div class="meta-date"></div>
-                    <div class="content-box">
-                        <p>Lorem ipsumm ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            e magna aliqua. Ut enim ad minim veniam, dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            sit amet.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-article content-left-container">
-                    <div class="content-date">
-                        <span>20-09-2017</span>
-                    </div>
-                    <div class="meta-date"></div>
-                    <div class="content-box">
-                        <p>Lorem ipsumm ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            e magna aliqua. Ut enim ad minim veniam, dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            sit amet.
-                        </p>
-                    </div>
-                </div>
+                        {% else %}
+                            <div class="timeline-article content-left-container">
+                                <div class="content-date">
+                                    <span>{{ article.date }}</span>
+                                </div>
+                                <div class="meta-date"></div>
+                                <div class="content-box">
+                                    <h5>{{ article.nadpis }}</h5>
+                                    <p>{{ article.text }}</p>
+                                </div>
+                            </div>
+                        {% endif %}
+                {% endfor %}
 
             </div>
             <div class="timeline-end"></div>

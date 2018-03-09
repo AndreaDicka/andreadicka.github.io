@@ -1,0 +1,28 @@
+{
+  "portfolio":[
+    {"image":"../images/hilek.png",
+      "popis":"Nasadzovala som front end webu na wordpress. Preview linka ešte nie je možná, nakoľko web nie je nasadený.",
+      "show-link": "no",
+      "link":"#",
+      "link-popis":"#"
+    },
+    {"image":"../images/reinguss.png",
+      "popis":"Nasadzovala som front end webu na wordpress. Následne som ho migrovala na ostrú verziu.",
+      "show-link": "yes",
+      "link":"http://reinguss.eu/",
+      "link-popis":"web"
+    },
+    {"image":"../images/aupark.png",
+      "popis":"Podieľala som sa na nasadzovaní dát pre nový web auparku.",
+      "show-link": "yes",
+      "link":"http://auparkpiestany.sk/",
+      "link-popis":"web"
+    },
+    {"image":"../images/cobotect.png",
+      "popis":"Podieľala som sa na testovaní webu Cobotect",
+      "show-link": "no",
+      "link":"#",
+      "link-popis":"#"
+    }
+  ]
+}

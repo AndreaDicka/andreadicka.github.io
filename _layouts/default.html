@@ -1,97 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Begin Jekyll SEO tag v2.4.0 -->
-    <title>AD | {{ page.title }}</title>
-    <meta name="generator" content="Jekyll v3.7.3" />
-    <meta property="og:title" content="{{ page.title }}" />
-    <meta property="og:locale" content="sk_SK" />
-    <meta name="description" content="Projekt pre Webove publikovanie 2018, FIIT STU" />
-    <meta property="og:description" content="Projekt pre Webove publikovanie 2018, FIIT STU" />
-    <link rel="canonical" href="http://localhost:4000/" />
-    <meta property="og:url" content="http://localhost:4000/" />
-    <meta property="og:site_name" content="Andrea Dicka" />
-    <script type="application/ld+json">
-{"name":"Andrea Dicka","description":"Projekt pre Webove publikovanie 2018, FIIT STU","@type":"WebSite","url":"http://localhost:4000/","headline":"{{ page.title }}","@context":"http://schema.org"}</script>
-    <!-- End Jekyll SEO tag -->
-
-    <link rel="stylesheet" href="/assets/main.css">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="/css/bootstrap-reboot.min.css">
-    <link rel="stylesheet" href="/css/timeline.css">
-
-    <script href="/js/bootstrap.bundle.min.js"></script>
-    <script href="/js/bootstrap.min.js"></script>
-
-    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Andrea Dicka" />
-
-</head>
+{% include header.html %}
 
 
-<body>
-
-<div class="container">
-
-    <header class="site-header" role="banner">
-            <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-                <a class="navbar-brand" href="/">Andrea Dicka</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav">
-
-                        {% assign current = page.url | downcase | split: '/' %}
-
-                        <li class="nav-item {% if page.active == 'home' %} active {% endif %}">
-                            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if page.active == 'about' %} active {% endif %}" href="/about/">About me</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if page.active == 'iaeste' %} active {% endif %}" href="/iaeste/">IAESTE</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if page.active == 'work' %} active {% endif %}" href="/work/">Work</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if page.active == 'contact' %} active {% endif %}" href="/contact/">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-    </header>
+    {% include navigation.html %}
 
     <main class="page-content" aria-label="Content">
 
         {{content}}
 
-
     </main>
 
-    <footer class="site-footer h-card">
-
-
-
-        Footer
-
-
-
-    </footer>
-</div>
-
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
-</body>
-
-</html>
+{% include footer.html %}

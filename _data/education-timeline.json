@@ -1,0 +1,30 @@
+{
+  "timeline": [
+    {
+      "date": "1.9.2015 - *",
+      "nadpis": "Wisdom Factory",
+      "text": "Začala som pracovať vo firme Wisdom Factory na pozícii junior Front End developer. Neskôr som sa začala zaúčať do backendu a až do teraz sa venujem Wordpressu a nasadzovaniu custom tém do Wordpressu."
+    },
+    {
+      "date": "1.10.2014 - *",
+      "nadpis": "IAESTE Slovakia",
+      "text": "Pridala som sa do študentskej organizácie IAESTE Slovakia. Dodnes tam pracujem na pozícii Národný líder pre grafiku a starám sa o celkový grafický výstup tejto organizácie, či už na sociálnych médiách alebo v printe."
+    },
+    {
+      "date": "1.9.2014 - *",
+      "nadpis": "FIIT STU",
+      "text": "Začala som študovať na Fakulte informatiky a informačných technológií na Slovenskej technickej univerzite v Bratislave."
+    },
+    {
+      "date": "2011-2014",
+      "nadpis": "Jazyková škola v Poprade",
+      "text": "Študovala som na jazykovej škole anglický jazyk. Školu som ukončila úspešne štátnicou na úrovni C1."
+    },
+    {
+      "date": "2009-2014",
+      "nadpis": "Bilingválne gymnázium na ulici Dominika Tatarku v Poprade.",
+      "text": "V tomto období som študovala na bilingválnom gymnáziu v nemeckom jazyku. Školu som ukončila úspešne, pričom som získala slovenskú aj nemeckú maturitu."
+    }
+
+  ]
+}
