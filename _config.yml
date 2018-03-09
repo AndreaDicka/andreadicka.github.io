@@ -25,9 +25,9 @@ markdown: kramdown
 theme: minima
 timezone: TIMEZONE
 
-plugins:
-  - jemoji
-  - jekyll-assets
+#plugins:
+#  - jemoji
+#  - jekyll-assets
 
 layouts:
   - default
