@@ -4,6 +4,110 @@ title: Zad2
 active: zad2
 ---
 <div class="blurb">
-    <h1>Dokumentácia k zadaniu 2</h1>
-    <p>Dokumentácia</p>
+    <h2>Dokumentácia k zadaniu 2</h2>
+    <p><strong>Znenie zadania: </strong> <a href="https://wiki.fiit.stuba.sk/study/bc/info/wp/2017-18/zadanie2/"
+                                            target="_blank">Zadanie 2</a></p>
+
+    <div>
+        <h3>Členenie textu</h3>
+        <br>
+        <dl class="row">
+            <dt class="col-sm-3">Kapitoly</dt>
+            <dd class="col-sm-9">Výsledný pdf súbor má 7 kapitol, nachádzajú sa v tagoch [chapter][/chapter]
+            </dd>
+            <dt class="col-sm-3">Podkapitoly</dt>
+            <dd class="col-sm-9">Výsledný pdf súbor má 19 podkapitol, nachádzajú sa ako vnorené tagy [chapter]<strong>[section][/section]</strong>[/chapter]
+            </dd>
+            <dt class="col-sm-3">Podpodkapitoly</dt>
+            <dd class="col-sm-9">Výsledný pdf súbor má 11 podpodkapitol, nachádzajú sa ako vnorené tagy
+                [chapter][section]<strong>[section][/section]</strong>[/section][/chapter]
+            </dd>
+            <dt class="col-sm-3">Prílohy</dt>
+            <dd class="col-sm-9">Výsledný pdf súbor má 2 prílohy, nachádzajú sa ako tagy [appendix][/appendix]
+            </dd>
+            <dt class="col-sm-3">Vygenerovaný obsah</dt>
+            <dd class="col-sm-9">Výsledný pdf súbor má 1 vygenerovaný obsah, ktorý generuje šablóna thesis.xml
+            </dd>
+        </dl>
+        <h3>Zvýraznenie textu</h3>
+        <br>
+        <dl class="row">
+            <dt class="col-sm-3">Emphasis</dt>
+            <dd class="col-sm-9">Nachádza sa napr. na strane č.3, zvýraznené je slovo "Scytale"
+            </dd>
+            <dt class="col-sm-3">Orderedlist</dt>
+            <dd class="col-sm-9">Nachádza sa napr. na strane č.6
+            </dd>
+            <dt class="col-sm-3">itemizedlist</dt>
+            <dd class="col-sm-9">Nachádza sa napr. na strane č.8
+            </dd>
+        </dl>
+        <h3>Odkazy</h3>
+        <br>
+        <dl class="row">
+            <dt class="col-sm-3">Odkaz na obrázkové súbory</dt>
+            <dd class="col-sm-9">V zozname obrázkov na konci dokumentu sa jednotlivé obrázky odkazujú na obrázky použité
+                v rámci dokumentu
+            </dd>
+            <dt class="col-sm-3">Odkaz na URL</dt>
+            <dd class="col-sm-9">Nachádza sa napr. v zozname Literatúry na konci, kde sa odkazuje na online zdroje
+            </dd>
+        </dl>
+        <h3>Poznámka pod čiarou</h3>
+        <br>
+        <dl class="row">
+            <dt class="col-sm-3">Poznámka</dt>
+            <dd class="col-sm-9">Nachádza sa na konci dokumentu v literatúre, thesis.xsl generuje odkazy na URL ako
+                poznámku pod čiarou
+            </dd>
+        </dl>
+        <h3>Zoznam literatúry a citácie v texte</h3>
+        <br>
+        <dl class="row">
+            <dt class="col-sm-3">Zoznam literatúry</dt>
+            <dd class="col-sm-9">Nachádza sa na konci dokumentu
+            </dd>
+            <dt class="col-sm-3">Citácie v texte</dt>
+            <dd class="col-sm-9">Naznačená citácia v texte je napr. pri nadpise kapitoly "Úvod do symetrických šifier"
+            </dd>
+        </dl>
+        <h3>Obrázky a tabuľky</h3>
+        <br>
+        <dl class="row">
+            <dt class="col-sm-3">Obrázky</dt>
+            <dd class="col-sm-9">V dokumente sa nachádza celkovo viac ako 20 obrázkov, ich zoznam je vygenerovaný na
+                konci dokumentu. Pre vkladanie obrázkov som použila tag [mediaobject][/mediaobject]
+            </dd>
+            <dt class="col-sm-3">Tabuľky</dt>
+            <dd class="col-sm-9">V dokumente sa nachádzajú 2 tabuľky, a to na strane č.4 a strane č.5. Zoznam tabuliek
+                vygenerovaný nie je.
+            </dd>
+        </dl>
+        <h3>Register pojmov</h3>
+        <br>
+        <dl class="row">
+            <dt class="col-sm-3">Pojmy</dt>
+            <dd class="col-sm-9">Register pojmov sa nachádza v dokumente na konci ako jedna z príloh.
+            </dd>
+        </dl>
+        <h3>Ďalšie štruktúry</h3>
+        <br>
+        <dl class="row">
+            <dt class="col-sm-3">function</dt>
+            <dd class="col-sm-9">V texte sa pracuje aj s matematickými funkciami, preto som pre ich demonštráciu použila
+                tag [function][/function]. Pri samotných funkciách využívam ešte horný index [superscript][/superscript]
+                a dolný index [subscript][/subscript].
+            </dd>
+        </dl>
+        <h3>Zhodnotenie</h3>
+        <p>Konečný dokument má nakoniec so všetkým až 35 strán (so všetkým), napriek tomu, že stanovené maximum bolo na
+            15 strán (bez
+            príloh, literatúry a úvodných obrázkov). Nakoľko tento semester nemám ešte zapísaný bakalársky projekt, pre
+            vypracovanie tohto zadania som použila svoju prácu z minulého roku, kde som na predmet Princípy informačnej
+            bezpečnosti písala analytický projekt na vybranú tému. Tento projekt nemal však v pôvodnej verzii požadovanú
+            štruktúru pre vypracovanie tohto zadania (napr. zoznam pojmov, zoznam príloh, poznámky pod čiarou, a
+            pod.), preto výsledný dokument úplne nekorešponduje s pôvodnou predlohou. Myslím si však, že výsledná práca
+            je oveľa lepšie štrukturovaná ako tá pôvodná a preto považujem výsledný dokument za ešte lepší ako
+            pôvodný.</p>
+    </div>
 </div><!-- /.blurb -->
