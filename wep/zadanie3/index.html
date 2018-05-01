@@ -4,6 +4,221 @@ title: Zad3
 active: zad3
 ---
 <div class="blurb">
-    <h1>Dokumentácia k zadaniu 3</h1>
-    <p>Dokumentácia</p>
+    <h2>Dokumentácia k zadaniu 3</h2>
+    <p><strong>Znenie zadania: </strong> <a href="https://wiki.fiit.stuba.sk/study/bc/info/wp/2017-18/zadanie3/"
+                                            target="_blank">Zadanie 3</a></p>
+
+    <div>
+        <h3>Typ dokumentu</h3>
+        <br>
+        <dl class="row">
+            <dt class="col-sm-3">Typ dokumentu</dt>
+            <dd class="col-sm-9">
+				Aby bola moja xml prezentácia okrem well-formed aj valid, použila som k tomu DTD. DTD je priložený ako externý súbor s názvom <strong>presentation.dtd</strong>
+				DTD súbor je nalinkovaný v presentation.xml cez link <code class="highlighter-rouge">&lt;!DOCTYPE presentation SYSTEM "presentation.dtd"&gt;</code>
+            </dd>
+            
+			<dt class="col-sm-3">Účel elementov</dt>
+            <dd class="col-sm-9">
+				V mojej xml prezentácii sa nachádzajú nasledovné elementy:
+					<ul>
+						<li><strong>presentation</strong> - koreňový element</li>
+						<li><strong>slide</strong> - element, ktorý zahŕňa jeden slide prezentácie</li>
+						<li><strong>title</strong> - nadpis slidu</li>
+						<li><strong>university, faculty, author</strong> - elementy pre identifikovanie autora</li>
+						<li><strong>left, right</strong> - elementy pre ľavú a pravú časť slidu, keď je rozdelený na 2 časti</li>
+						<li><strong>p, text, list, image</strong> - elementy pre jednotlivé časti prezentácie, p a text sú elementy pre vloženie textu a sú viac menej ekvivalentné, list je pre zoznam a image je element pre vloženie obrázka</li>
+						<li><strong>title|two-part|references</strong> - atribúty pre slide type="", ktoré definujú typ použitého slidu, čo je titulná strana, two-part je slide rozdelený na dve časti, references je slide pre zdroje</li>
+						<li><strong>white|green</strong> - atribúty pre slide color="", ktoré definujú farebné pozadie pre slide</li>
+					</ul>
+            </dd>
+			
+			<dt class="col-sm-3">Ukážka DTD</dt>
+            <dd class="col-sm-9">
+				<pre>
+					<code class="language-dtd" data-lang="dtd">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br><br>
+
+&lt;!ELEMENT presentation (slide*)&gt;<br>
+&lt;!ELEMENT slide (title, ((university?,faculty?,author*)* |  (left?, right?)* | (p* | text* | list* | image*)*) )&gt;<br>
+&lt;!ATTLIST slide type (title|two-part|references) #REQUIRED&gt;<br>
+&lt;!ATTLIST slide color (white | green) #IMPLIED&gt;<br>
+&lt;!ELEMENT title (#PCDATA)&gt;<br>
+&lt;!ELEMENT university (#PCDATA)&gt;<br>
+&lt;!ELEMENT faculty (#PCDATA)&gt;<br>
+&lt;!ELEMENT author (#PCDATA)&gt;<br>
+&lt;!ELEMENT p (#PCDATA)&gt;<br>
+&lt;!ELEMENT text (#PCDATA)&gt;<br>
+&lt;!ELEMENT list (item*)&gt;<br>
+&lt;!ELEMENT item (#PCDATA)&gt;<br>
+&lt;!ELEMENT left (p* | text* | list* | image*)*&gt;<br>
+&lt;!ELEMENT right (p* | text* | list* | image*)*&gt;<br>
+&lt;!ELEMENT image (#PCDATA)&gt; <br>
+&lt;!ATTLIST image src CDATA #REQUIRED description CDATA #REQUIRED&gt; 
+					</code>
+				</pre>
+            </dd>
+        </dl>
+		
+		<h3>XML Prezentácia</h3>
+        <br>
+        <dl class="row">
+            <dt class="col-sm-3">Typy slidov</dt>
+            <dd class="col-sm-9">
+				V prezentácii viem použiť 3 typy slidov - titulnú stranu, slide pre text a obrázok (two-part) a slide pre zdroje k prezentácii.
+            </dd>
+			<dt class="col-sm-3">Elementy</dt>
+            <dd class="col-sm-9">
+				V prvom rade si definujem typ slidu a podľa toho môžem použiť rôzne vnorené elementy. Pre titulnú stranu to môžu byť napr. elementy ako university, faculty, author a title,
+				pre slide typu "two-part" to budú elementy title, left a right, pričom v elementoch left a right môžem použiť vnorené elementy p, text, image, list a pre samotný list aj jednotlivé elementy typu item.
+            </dd>
+			
+			<dt class="col-sm-3">Ukážka z XML prezentácie</dt>
+            <dd class="col-sm-9">
+				<pre>
+					<code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE presentation SYSTEM "presentation.dtd"&gt;
+&lt;presentation&gt;
+  &lt;slide color="green" type="title"&gt;
+    &lt;title&gt;Saving earth&lt;/title&gt;
+
+    &lt;university&gt;Slovak university of technology in Bratislava&lt;/university&gt;
+
+    &lt;faculty&gt;Faculty of informatics and information technologies&lt;/faculty&gt;
+
+    &lt;author&gt;Andrea Dická&lt;/author&gt;
+  &lt;/slide&gt;
+					</code>
+				</pre>
+            </dd>
+		</dl>
+		
+		
+		<h3>Základný návrh XSL transformácií, ich vhodnosť, parametrizácia</h3>
+        <br>
+        <dl class="row">
+            <dt class="col-sm-3">Spoločné premenné</dt>
+            <dd class="col-sm-9">
+				K XSL transformáciám pre xml prezentáciu do html+css a do pdf používam spoločné premenné, ktoré sa nachádzajú v súbore <strong>variables.xsl</strong>.
+				Sú tam definície napr. jednotlivých farieb pre texty, veľkosti textov, použitý font a premenná, ktorou si vieme vypnúť/zapnúť číslovanie slidov.
+            </dd>
+			
+			<dt class="col-sm-3">Ukážka súboru variables.xml</dt>
+            <dd class="col-sm-9">
+				<pre>
+					<code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format" version="2.0"&gt;
+
+&lt;xsl:variable name="p-size" select="'20'" &gt;&lt;/xsl:variable&gt;
+&lt;xsl:variable name="university-size" select="'18'" &gt;&lt;/xsl:variable&gt;
+&lt;xsl:variable name="faculty-size" select="'14'" &gt;&lt;/xsl:variable&gt;
+...
+					</code>
+				</pre>
+            </dd>
+		</dl>
+		
+		<h3>Vytvorenie XSLT pre konverziu prezentácie z XML -> HTML+CSS</h3>
+        <br>
+        <dl class="row">
+            <dt class="col-sm-3">Súbor</dt>
+            <dd class="col-sm-9">
+				XSLT súbor, kde sa nachádzajú transformácie prezentácie z XML do HTML+CSS, sa nazýva <strong>html.xsl</strong>
+            </dd>
+			<dt class="col-sm-3">Základné transformácie</dt>
+            <dd class="col-sm-9">
+				Definovanie premennej pre názov jednotlivých slidov, keďže každý slide sa má nachádzať v samostatnom html súbore.
+				<code>&lt;xsl:variable name="file" select="concat($path,'presentation_',position(),'.html')"/&gt;</code> Názov každého slidu bude teda presentation_(poradove cislo slidu).html. <br><br>
+				Definovanie základnej štruktúry html slidu:
+				<pre>
+					<code>
+&lt;xsl:result-document href="{$file}" format="html">
+	&lt;html>
+		&lt;head>
+			&lt;meta encoding="UTF-8"/&gt;
+			&lt;link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/&gt;
+			&lt;link rel="stylesheet" type="text/css" href="./main.css" /&gt;
+		&lt;/head&gt;
+		&lt;body&gt;
+			&lt;section class="basic"&gt;
+				&lt;xsl:apply-templates select="."/&gt;	
+			&lt;/section&gt;
+			&lt;section class="width_full"&gt;
+					&lt;div class="align_arrows"&gt;
+						&lt;xsl:if test="count(preceding::slide)  &gt;  0"&gt;
+								&lt;a href="presentation_{position() - 1}.html"&gt;&lt;i class="fa fa-5x fa-arrow-left arrow_style" aria-hidden="true"&gt;&lt;/i&gt;&lt;/a&gt;
+						&lt;/xsl:if&gt;
+						&lt;xsl:if test="$page-counter-enabled"&gt;
+							&lt;p style="display:inline; font-size: 24px; font-family:{$font-face};"&gt;
+								&lt;xsl:value-of select="position()" /&gt;/&lt;xsl:value-of select="last()" /&gt;
+							&lt;/p&gt;
+						&lt;/xsl:if&gt;
+						&lt;xsl:if test="count(following::slide) &gt;  0"&gt;
+								&lt;a href="presentation_{position() + 1}.html"&gt;&lt;i class="fa fa-5x fa-arrow-right arrow_style" aria-hidden="true"&gt;&lt;/i&gt;&lt;/a&gt;
+						&lt;/xsl:if&gt;
+						
+					&lt;/div&gt;
+				&lt;/section&gt;
+		&lt;/body&gt;
+	&lt;/html&gt;
+&lt;/xsl:result-document&gt;
+					</code>
+					
+				</pre>
+				
+					V &lt;section class="basic"&gt;&lt;/section&gt; sa budú generovať jednotlivé slidy. Keďže je každý slide v samostatnom html súbore, potrebujeme tam ešte prirobiť navigáciu, vďaka ktorej môžeme jednotlivé hmtl súbory prehliadať. Rozhodla som sa urobiť to intuitívne pomocou šípok (fontawesome) doľava a doprava, ktoré prepínajú slidy (predchádzajúci, nasledujúci).
+            </dd>
+			
+			<dt class="col-sm-3">CSS</dt>
+            <dd class="col-sm-9">
+				Pre štýlovanie prezentácie používam externý css súbor s názvom <strong>main.css</strong>, kde sú definované základné štýly pre zobrazenie prezentácie.
+            </dd>
+		</dl>
+		
+		<h3>Vytvorenie XSLT pre konverziu prezentácie z XML -> PDF</h3>
+        <br>
+        <dl class="row">
+            <dt class="col-sm-3">Súbor</dt>
+            <dd class="col-sm-9">
+				XSLT súbor, kde sa nachádzajú transformácie prezentácie z XML do PDF, sa nazýva <strong>pdf.xsl</strong>
+            </dd>
+			<dt class="col-sm-3">Ukážka transformácie</dt>
+            <dd class="col-sm-9">
+				<pre>
+					<code>
+&lt;xsl:template match="/" name="PDF"&gt;
+	&lt;fo:root&gt;
+		&lt;fo:layout-master-set&gt;
+			 &lt;fo:simple-page-master page-height="175mm" page-width="250mm"
+			 master-name="presentation" &gt;
+				 &lt;fo:region-body   /&gt;
+ 			&lt;/fo:simple-page-master&gt;
+	   &lt;/fo:layout-master-set&gt;
+	   &lt;fo:page-sequence master-reference="presentation"&gt;
+
+			&lt;fo:flow flow-name="xsl-region-body"&gt;
+				&lt;xsl:for-each select="presentation/slide"&gt;
+							&lt;fo:block-container  background-color="{@color}" height="175mm"&gt;
+								&lt;fo:block break-after="page" margin-top="2cm" margin-left="2cm"  &gt;
+									&lt;xsl:apply-templates select="." /&gt;
+									&lt;xsl:if test="$page-counter-enabled"&gt;
+										&lt;fo:block color="{$font-color-black}" font-size="12pt" text-align="right" font-family="{$font-face}"&gt;
+											&lt;fo:page-number/&gt;/&lt;xsl:value-of select="last()" /&gt;
+										&lt;/fo:block&gt;
+									&lt;/xsl:if&gt;
+								&lt;/fo:block&gt;
+							&lt;/fo:block-container&gt;
+			    &lt;/xsl:for-each&gt;
+			&lt;/fo:flow&gt;
+			
+		&lt;/fo:page-sequence&gt;
+	&lt;/fo:root&gt;
+&lt;/xsl:template&gt;
+					</code>
+				</pre>
+            </dd>
+		</dl>
+    </div>
 </div><!-- /.blurb -->
